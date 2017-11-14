@@ -25,11 +25,16 @@ dataObj.prototype.draw = function () {
 			this.alpha = 1
 		}
 		ctx1.fillStyle = 'rgba(255, 255, 255,' + this.alpha + ')'
-		ctx1.fillText('GAMEOVER', 0.5 * w, 0.5 * h)
-		if (this.score < 4000) {
-			ctx1.fillText('太菜了，单国伟比你厉害很多啊', 0.5 * w, 0.5 * h + 30)
+		ctx1.fillText('GAMEOVER', 0.5 * w, 0.5 * h - 20)
+		if (this.score < 2000) {
+			ctx1.fillStyle = 'blue'
+			ctx1.fillText('有点菜，加油哦', 0.5 * w, 0.5 * h + 30)
+		} else if (this.score < 4000) {
+			ctx1.fillStyle = 'blue'
+		    ctx1.fillText('还可以哦，继续努力', 0.5 * w, 0.5 * h + 30)	
 		} else {
-		    ctx1.fillText('虽然分很高，但单国伟还是比你厉害，嘿嘿', 0.5 * w, 0.5 * h + 30)	
+			ctx1.fillStyle = 'red'
+		    ctx1.fillText('恭喜你，已经成为大神了！', 0.5 * w, 0.5 * h + 30)
 		}
 	}
 	ctx1.restore()
